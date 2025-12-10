@@ -3,17 +3,19 @@ package com.sagnik.democlient.model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.Id;
 import org.springframework.stereotype.Component;
 
-@Component
-@Entity
+import javax.persistence.Entity;
+
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
+@Entity
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String user_id;
+    private String userId;
 
     private String name;
     private String email;
@@ -21,4 +23,7 @@ public class User {
     private String designation;
     private String address;
     private String password;
+
+    private String managerId;
+
 }
